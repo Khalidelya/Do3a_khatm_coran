@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أدعية ليلة القدر — خالد الياحمدي</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Arial', sans-serif;
+background:#050d08;
+color:#f3f1e8;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+h1{
+color:#d4af37;
+margin-top:30px;
+}
+
+/* نجوم */
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+opacity:.6;
+animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+from{opacity:.8}
+to{opacity:.2}
+}
+
+/* بطاقة */
+.card{
+background:#0b1a11;
+border:1px solid rgba(212,175,55,0.3);
+padding:20px;
+border-radius:12px;
+margin:20px 0;
+line-height:2.2;
+box-shadow:0 0 20px rgba(212,175,55,0.1);
+}
+
+/* صوت */
+.player{
+background:#0e2216;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.4);
+margin:20px 0;
+}
+
+button{
+background:#d4af37;
+border:none;
+padding:10px 20px;
+margin:8px;
+cursor:pointer;
+border-radius:6px;
+font-size:16px;
+}
+
+.counter{
+font-size:45px;
+color:#d4af37;
+margin:15px;
+}
+
+footer{
+margin-top:40px;
+color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- نجوم -->
+<script>
+for(let i=0;i<120;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.top=Math.random()*100+"%";
+s.style.left=Math.random()*100+"%";
+document.body.appendChild(s);
+}
+</script>
+
+<div class="container">
+
+<h1>🌙 أدعية ليلة القدر</h1>
+
+<!-- 🎧 الصوت -->
+<div class="player">
+<h3>🎙️ دعاء القنوت</h3>
+
+<audio id="audio" controls>
+  <source src="https://archive.org/download/azan_201701/azan.mp3" type="audio/mpeg">
+  المتصفح لا يدعم الصوت
+</audio>
+
+<p>اضغط على زر التشغيل للاستماع</p>
+</div>
+
+<!-- الدعاء -->
+<div class="card">
+اللّهم إنك عفوٌّ كريمٌ تحبُّ العفوَ فاعفُ عنّا<br><br>
+اللّهم لا تدع لنا ذنباً إلا غفرتَه،
+ولا همّاً إلا فرَّجتَه،
+ولا مريضاً إلا شفيتَه،
+برحمتك يا أرحم الراحمين
+</div>
+
+<!-- مسبحة -->
+<h2>📿 مسبحة</h2>
+<div class="counter" id="count">0</div>
+
+<button onclick="add()">سبحان الله</button>
+<button onclick="add()">الحمد لله</button>
+<button onclick="add()">الله أكبر</button>
+<br>
+<button onclick="reset()">إعادة</button>
+
+</div>
+
+<footer>
+اللهم صل وسلم على نبينا محمد ﷺ<br>
+خالد الياحمدي
+</footer>
+
+<script>
+let count=0;
+function add(){
+count++;
+document.getElementById("count").innerText=count;
+}
+function reset(){
+count=0;
+document.getElementById("count").innerText=count;
+}
+</script>
+
+</body>
+</html>
